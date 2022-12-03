@@ -42,3 +42,46 @@ let book4 = new Library("Sven Svensson", "ddmkffnfkjnf", 2011);
 let book5 = new Library("Lars Larsson", "slddfjdfdfj", 2005);
 
 console.log(book1, book2, book3, book4, book5);
+
+let baseballTeams = ["Dodgers", "Giant", "Mets", "Yankees", "Astros"];
+
+baseballTeams.push("Sirius");
+
+console.log(baseballTeams);
+baseballTeams[1] = "AIK";
+console.log(baseballTeams);
+let myFavoriteTeam = baseballTeams[0];
+
+let shoppingList = [
+  "apples",
+  "pizza",
+  "chicken",
+  "mushrooms",
+  "oranges",
+  "beef",
+];
+
+let colors = ["red", "orange", "green", "blue", "indigo", "violet"];
+let numbers = [2, 3, 6, 9, 20, 1000];
+let sammanslagen = colors.concat(numbers);
+let nyArray = [4, 5, 66667, 77777, 888888];
+let nySammanslagen = sammanslagen.concat(nyArray);
+
+nySammanslagen.reverse();
+nySammanslagen.sort();
+
+let weather = [
+  "rainy",
+  "cold",
+  "chilly",
+  "snowy",
+  "cloudy",
+  "hot",
+  "warm",
+  "humid",
+];
+
+let winter = weather.slice(-8, -3)
+let summer = weather.slice(-3)
+
+
