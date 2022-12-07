@@ -81,7 +81,51 @@ let weather = [
   "humid",
 ];
 
-let winter = weather.slice(-8, -3)
-let summer = weather.slice(-3)
+let winter = weather.slice(-8, -3);
+let summer = weather.slice(-3);
 
+let randomBodyParts = ["huvud", "arm", "fötter", "tår", "höfter"];
+let randomAdjectives = ["ful", "tjock", "fet", "spinkig"];
+let randomWords = ["hus", "sko", "ko", "älg", "lejon"];
 
+function showWords() {
+  let randomBodyPart =
+    randomBodyParts[Math.floor(Math.random() * randomBodyParts.length)];
+  let randomAdjective =
+    randomAdjectives[Math.floor(Math.random() * randomAdjectives.length)];
+  let randomWord = randomWords[Math.floor(Math.random() * randomWords.length)];
+  console.log(
+    `Your ${randomBodyPart} is like a ${randomAdjective} ${randomWord}`
+  );
+}
+
+function goodEveningNeighbor(name, task) {
+  return `Good evening ${name} thanks for ${task}!`;
+}
+
+let knacka = function () {
+  return "Who's there?";
+};
+
+let dogWalker = (function (person, dog) {
+  return `${person} is taking ${dog} for a walk`;
+})("Pelle", "Fido");
+
+let galloons = 12;
+let mpg = 34;
+
+function roadTrip() {
+  return galloons * mpg;
+}
+
+let height = 10;
+
+function volume() {
+  let width = 10;
+  let length = 10;
+
+  let volumeOfObject = function () {
+    return length * width * height;
+  };
+  return volumeOfObject();
+}
