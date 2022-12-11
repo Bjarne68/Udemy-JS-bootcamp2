@@ -129,3 +129,124 @@ function volume() {
   };
   return volumeOfObject();
 }
+
+function getUserChoice(userInput) {
+  userChoice = userInput.toLowerCase();
+
+  if (userInput === "bear" || userInput === "gun" || userInput == "human") {
+    return userChoice;
+  } else {
+    return "Felaktigt val";
+  }
+}
+
+let computerChoice = function getComputerChoice() {
+  let randomNumber = Math.floor(Math.random() * 3);
+  switch (randomNumber) {
+    case 0:
+      return "bear";
+      break;
+    case 1:
+      return "human";
+      break;
+    case 2:
+      return "gun";
+      break;
+  }
+};
+
+function determineWinner(userChoice, computerChoice) {
+  if (getUserChoice === computerChoice) {
+    return "Det blev oavgjort";
+  }
+  if (userChoice === "human") {
+    if (computerChoice === "bear") {
+      return "Datorn vann!";
+    } else {
+      return "User vann!";
+    }
+  }
+  if (userChoice === "bear") {
+    if (computerChoice === "gun") {
+      return "Datorn vann!";
+    } else {
+      return "User vann!";
+    }
+  }
+  if (userChoice === "gun") {
+    if (computerChoice === "human") {
+      return "Datorn vann!!";
+    } else {
+      return "User vann!!!";
+    }
+  }
+}
+
+function playGame() {
+  let promptUserChoice = prompt("Välj bear, human eller gun");
+  let userChoice = getUserChoice(promptUserChoice);
+
+  console.log(userChoice);
+  console.log(computerChoice);
+  console.log(determineWinner(userChoice, computerChoice));
+}
+
+function inputCaloriesByDay(day) {
+  switch (day) {
+    case "Måndag":
+      return 3500;
+      break;
+    case "Tisdag":
+      return 1500;
+      break;
+    case "Onsdag":
+      return 1800;
+      break;
+    case "Torsdag":
+      return 2300;
+      break;
+    case "Fredag":
+      return 2400;
+      break;
+    case "Lördag":
+      return 1500;
+      break;
+    case "Söndag":
+      return 1500;
+      break;
+    default:
+      return "Välj en giltig dag!!";
+      break;
+  }
+}
+
+function getTotalCalories() {
+  return (
+    inputCaloriesByDay("Måndag") +
+    inputCaloriesByDay("Tisdag") +
+    inputCaloriesByDay("Onsdag") +
+    inputCaloriesByDay("Torsdag") +
+    inputCaloriesByDay("Fredag") +
+    inputCaloriesByDay("Lördag") +
+    inputCaloriesByDay("Söndag")
+  );
+}
+
+function getIdealCalories() {
+  let idealDailyCalories = 2000;
+  return idealDailyCalories * 7;
+}
+
+function calculateHealthPlan() {
+  let actualCalories = getTotalCalories();
+  let idealCalories = getIdealCalories();
+
+  if(actualCalories===idealCalories){
+    return "du åt rätt mängd mat."
+  }
+  else if (actualCalories>idealCalories){
+    return "Dags att gå till gymmet"
+  }
+  else "Ät lite till."
+}
+console.log(calculateHealthPlan())
