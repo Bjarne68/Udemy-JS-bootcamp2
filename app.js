@@ -241,12 +241,107 @@ function calculateHealthPlan() {
   let actualCalories = getTotalCalories();
   let idealCalories = getIdealCalories();
 
-  if(actualCalories===idealCalories){
-    return "du åt rätt mängd mat."
-  }
-  else if (actualCalories>idealCalories){
-    return "Dags att gå till gymmet"
-  }
-  else "Ät lite till."
+  if (actualCalories === idealCalories) {
+    return "du åt rätt mängd mat.";
+  } else if (actualCalories > idealCalories) {
+    return "Dags att gå till gymmet";
+  } else "Ät lite till.";
 }
-console.log(calculateHealthPlan())
+console.log(calculateHealthPlan());
+
+let tärning = () => {
+  let num = Math.floor(Math.random() * 6 + 1);
+
+  switch (num) {
+    case 1:
+      console.log("En etta");
+      break;
+    case 2:
+      console.log("En tvåa");
+      break;
+    case 3:
+      console.log("En trea");
+      break;
+    case 4:
+      console.log("EN fyra");
+    case 5:
+      console.log("En femma");
+      break;
+    case 6:
+      console.log("En sexa");
+      break;
+    default:
+      break;
+  }
+};
+
+let loop = () => {
+  let x = 0;
+  while (x < 5) {
+    console.log("Hej på dig!!");
+    x++;
+  }
+};
+
+let dowhile = () => {
+  do {
+    console.log("0 är större än ett - det här är fel");
+  } while (0 > 1);
+};
+
+let forloop = () => {
+  let arr = [1, 2, 4, 6];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 1) {
+      console.log("Det är en etta.");
+    } else if (arr[i] === 2) {
+      console.log("Det är en tvåa");
+    } else if (arr[i] === 4) {
+      console.log("Det är en fyra");
+    } else {
+      console.log("Det är en sexa");
+    }
+  }
+};
+
+let magicBall = () => {
+  let userName = prompt("Vad heter du?");
+  if (userName) {
+    alert(`Hej ${userName}`);
+  } else {
+    console.log("Hej");
+  }
+  let userQuestion = prompt("Ställ en fråga");
+  alert(`${userName} ställde fråga: ${userQuestion}`);
+
+  let randomNumber = Math.floor(Math.random() * 8);
+  var eightBall = '';
+
+  switch (randomNumber) {
+    case 0:
+      eightBall = "Better not tell you now.";
+      break;
+    case 1:
+      eightBall = "Concentrate and ask again.";
+      break;
+    case 2:
+      eightBall = "Reply hazy try again";
+      break;
+    case 3:
+      eightBall = "Cannot predict now";
+      break;
+    case 4:
+      eightBall = "My reply is no.";
+      break;
+    case 5:
+      eightBall = "My sources say no";
+      break;
+    case 6:
+      eightBall = "Outlook not so good";
+      break;
+    case 7:
+      eightBall = "Signs point to yes";
+      break;
+  }
+     alert("Åtta bollen säger:" + eightBall)
+};
